@@ -14,6 +14,7 @@ public class InRoomChat : Photon.MonoBehaviour
     private Vector2 scrollPos = Vector2.zero;
     public InputField ChatInputField;
     public Text ChatText;
+    public static bool typing = false;
 
     public void addLINE(string newLine)
     {
@@ -50,8 +51,11 @@ public class InRoomChat : Photon.MonoBehaviour
     Label_00E1:
         if ((Event.current.type == EventType.KeyDown) && ((Event.current.keyCode == KeyCode.KeypadEnter) || (Event.current.keyCode == KeyCode.Return)))
         {
+            typing = true;
+            
             if (!string.IsNullOrEmpty(this.inputLine))
             {
+                typing = false;
                 string str2;
                 if (this.inputLine == "\t")
                 {
