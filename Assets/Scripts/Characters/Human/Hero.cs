@@ -1151,7 +1151,7 @@ public class Hero : Human
                     }
                     float x = 0f;
                     float z = 0f;
-                    if (!IN_GAME_MAIN_CAMERA.isTyping)
+                    if (!InRoomChat.typing)
                     {
                         if (this.inputManager.isInput[InputCode.up])
                         {

@@ -55,7 +55,6 @@ public class InRoomChat : Photon.MonoBehaviour
             
             if (!string.IsNullOrEmpty(this.inputLine))
             {
-                typing = false;
                 string str2;
                 if (this.inputLine == "\t")
                 {
@@ -686,6 +685,7 @@ public class InRoomChat : Photon.MonoBehaviour
                 this.inputLine = string.Empty;
                 ChatInputField?.Select();
                 ChatInputField.text = string.Empty;
+                typing = false;
                 return;
             }
             this.inputLine = "\t";
